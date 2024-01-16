@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Freelancers.Models.Domain.FreelancerViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container shadow p-5">
+
+    @if (TempData["SuccessMsg"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMsg"]
+        </div>
+    }
+    else if (TempData["ErrorMsg"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["ErrorMsg"]
+        </div>
+        
+    }   
+
+
+    <h1 class="text-center">Freelancer List</h1>
+
+    <div class="col mb-3">
+        <a asp-controller="Freelancer" asp-action="Create" class="btn btn-primary">Add New Freelancer</a>
+    </div>
+
+    <table id="freelancers" class="table table-light table-hover" class="display" style="width:80%">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Mail</th>
+                <th scope="col">PhoneNumber</th>
+                <th scope="col">Skillsets</th>
+                <th scope="col">Hobby</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Username
+                    </td>
+                    <td>
+                        @item.Mail
+                    </td>
+                    <td>
+                        @item.PhoneNumber
+                    </td>
+                    <td>
+                        @item.Skillsets
+                    </td>
+                    <td>
+                        @item.Hobby
+                    </td>
+                  
+                    <td>
+                        <a asp-controller="Freelancer" asp-action="Edit" asp-route-id="@item.ID" class=" btn btn-success">Edit</a>
+                        <a asp-controller="Freelancer" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-primary">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#freelancers').DataTable({
+                processing: true,
+                ordering: true,
+                paging: true,
+                searching: true,
+                pagingType: 'full_numbers'
+
+            });
+            
+        });
+    </script>
+}
+
