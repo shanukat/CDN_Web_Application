@@ -18,3 +18,19 @@ This is the User Interface for register/delete/update/get Freelancers
 
  ## Run & Test:
  
+ * Open the solution file using the Visual Studio 2022.
+* Restore the NuGet packages by rebuilding the solution.
+* Run the project.
+  
+ <p align="center">
+  <img src="https://github.com/shanukat/CDN_Web_Application/blob/master/images/Dashboard.png" width="800" title="diagram"> 
+   </p>
+   <p align="center">
+  <img src="https://github.com/shanukat/CDN_Web_Application/blob/master/images/register.png" width="600" title="diagram"> 
+   </p>
+ <p align="center">
+  <img src="https://github.com/shanukat/CDN_Web_Application/blob/master/images/update6.png" width="600" title="diagram"> 
+   </p>
+   <p align="center">
+  <img src="https://github.com/shanukat/CDN_Web_Application/blob/master/images/de.png" width="600" title="diagram"> 
+   </p>
